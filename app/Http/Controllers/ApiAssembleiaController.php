@@ -6,17 +6,30 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Assembleia;
+use PDF;
 
 class ApiAssembleiaController extends Controller
 {
+
+   /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        $assembleiacases = Assembleia::All();
+        return view('login', compact('assembleiacases'));
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function votantesDocs()
     {
-        $assembleias = Assembleia::all();
+        $assembleias = Assembleia::findAll();
         return response()->json($assembleias);
     }
 
@@ -57,7 +70,6 @@ class ApiAssembleiaController extends Controller
      */
     public function eventoId($eventoId)
     {
-       // $assembleias = Assembleia::findOrFail($id);
         $assembleias = DB::table('Assembleia')->where([
             ['codigo_evento', '=', $eventoId]
         ])->get();
@@ -87,9 +99,9 @@ class ApiAssembleiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+
     }
 
     /**
@@ -110,8 +122,19 @@ class ApiAssembleiaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+
+    }
+
+    public function geraPdf($id)
+    {
+        $gerapdf = DB::table('Assembleia')->where([
+            ['id', '=', $id]
+        ])->get();
+
+        $pdf = PDF::loadView('pdf', compact('gerapdf'));
+
+        return $pdf->setPaper('a4')->stream('Votante.pdf');
     }
 }
