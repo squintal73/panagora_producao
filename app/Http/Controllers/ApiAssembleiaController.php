@@ -17,7 +17,7 @@ class ApiAssembleiaController extends Controller
      */
     public function show()
     {
-        $assembleiacases = Assembleia::All();
+        $assembleiacases = Assembleia::paginate(15);
         return view('login', compact('assembleiacases'));
     }
 
@@ -28,7 +28,7 @@ class ApiAssembleiaController extends Controller
      */
     public function votantesDocs()
     {
-        $assembleias = Assembleia::findAll();
+        $assembleias = Assembleia::paginate(15);
         return response()->json($assembleias);
     }
 
