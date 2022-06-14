@@ -92,9 +92,8 @@ Gerar o Token para acessar a API
 
 Body -> Form-data
 
-KEY -------------- VALUE
-email ------------ panagora@panagora.com.br
-password --------- p@nagor@2022
+email:panagora@panagora.com.br
+password:p@nagor@2022
 
 ```sh
 https://assembleia.api.pandora.com.br/api/gera-token-integracao
