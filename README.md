@@ -1,4 +1,11 @@
-# Setup Projetos Panagora
+# Setup Projeto Panagora
+
+Clone o Projeto
+
+```sh
+git clone https://github.com/squintal73/panagora_producao.git
+
+```
 
 Crie o Arquivo .env
 
@@ -17,8 +24,8 @@ DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=panagora
-DB_USERNAME=panagora
-DB_PASSWORD=pan123
+DB_USERNAME=panuser
+DB_PASSWORD=pan@123
 
 CACHE_DRIVER=redis
 QUEUE_CONNECTION=redis
@@ -29,7 +36,11 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
 
-Suba os containers do projeto
+Construa e Suba os containers do projeto
+
+```sh
+docker-compose build
+```
 
 ```sh
 docker-compose up -d
@@ -53,13 +64,19 @@ Gerar a key do projeto Laravel
 php artisan key:generate
 ```
 
+Gerar a key do JWT
+
 ```sh
 php artisan jwt:secret
 ```
 
+Gerar o Banco de Dados
+
 ```sh
 php artisan migrate
 ```
+
+Rodar O Seeder
 
 ```sh
 php artisan migrate:refresh --seed
@@ -71,10 +88,17 @@ Acesse o projeto
 https://assembleia.api.pandora.com.br
 ```
 
-Gerar o Token
+Gerar o Token para acessar a API
+
+Body -> Form-data
+
+KEY -------------- VALUE
+email ------------ panagora@panagora.com.br
+password --------- p@nagor@2022
 
 ```sh
 https://assembleia.api.pandora.com.br/api/gera-token-integracao
+
 ```
 
 Criar um Votante
@@ -95,7 +119,7 @@ Lista um unico Votante
 https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/{codigo_evento}/votante/{id}/get
 ```
 
-Lista de Documentos
+Geração de Documentos
 
 ```sh
 https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/assembleia/
