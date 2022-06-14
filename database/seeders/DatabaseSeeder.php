@@ -20,13 +20,6 @@ class DatabaseSeeder extends Seeder
             'job_title' => 'Gerente administrativo'
         ]);
 
-        \App\Models\Evento::create([
-            'nome' => 'Roberto da Silda',
-            'nome_evento' => 'Eleição da Pandora',
-            'codigo_evento' => '7747',
-            'token' => '9dc19260-ff58-4cf2-a5f4-e2f297595fab'
-        ]);
-
         \App\Models\Assembleia::create([
             'nome' => 'Roberto da Silda',
             'nome_evento' => 'Eleição da Pandora',
