@@ -52,5 +52,4 @@
     </div>
     {{ $assembleiacases->links() }}
 </div>
-
 @endsection

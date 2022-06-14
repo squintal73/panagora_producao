@@ -19,12 +19,8 @@ use App\Http\Controllers\AuthController;
 Route::get('tag/Organizador/paths/evento/assembleia', [ApiAssembleiaController::class, 'show']);
 Route::get('tag/Organizador/paths/evento/assembleia/{Id}', [ApiAssembleiaController::class, 'geraPdf'])->name('gerar.geraPdf');
 
-Route::get('tag/Organizador/paths/evento/{eventoId}/votante/get', [ApiAssembleiaController::class, 'eventoId']);
-Route::get('tag/Organizador/paths/evento/{eventoId}/votante/{Id}/get', [ApiAssembleiaController::class, 'votanteId']);
-Route::post('tag/Organizador/paths/evento/post', [ApiAssembleiaController::class, 'criarVotante']);
-
-
 Route::group([ 'middleware' => 'auth-jwt' ], function () {
-
-
+    Route::get('tag/Organizador/paths/evento/{eventoId}/votante/get', [ApiAssembleiaController::class, 'eventoId']);
+    Route::get('tag/Organizador/paths/evento/{eventoId}/votante/{Id}/get', [ApiAssembleiaController::class, 'votanteId']);
+    Route::post('tag/Organizador/paths/evento/post', [ApiAssembleiaController::class, 'criarVotante']);
 });
