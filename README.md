@@ -1,4 +1,4 @@
-# Setup Docker Para Projetos Laravel
+# Setup Projetos Panagora
 
 Crie o Arquivo .env
 
@@ -89,11 +89,12 @@ Lista um Evento
 https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/{codigo_evento}/votante/get
 ```
 
-Lista um unico Votante 
+Lista um unico Votante
 
 ```sh
 https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/{codigo_evento}/votante/{id}/get
 ```
+
 Lista de Documentos
 
 ```sh
