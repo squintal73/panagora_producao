@@ -3,7 +3,7 @@
 Crie o Arquivo .env
 
 ```sh
-cd example-project/
+cd panagora_producao/
 cp .env.example .env
 ```
 
