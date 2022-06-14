@@ -10,7 +10,6 @@ use PDF;
 
 class ApiAssembleiaController extends Controller
 {
-
    /**
      * Display a listing of the resource.
      *
@@ -92,7 +91,6 @@ class ApiAssembleiaController extends Controller
         return response()->json($assembleias);
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -101,7 +99,7 @@ class ApiAssembleiaController extends Controller
      */
     public function edit()
     {
-
+        //
     }
 
     /**
@@ -124,7 +122,7 @@ class ApiAssembleiaController extends Controller
      */
     public function destroy()
     {
-
+        //
     }
 
     public function geraPdf($id)
