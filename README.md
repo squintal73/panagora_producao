@@ -68,31 +68,36 @@ php artisan migrate:refresh --seed
 Acesse o projeto
 
 ```sh
-(https://assembleia.api.pandora.com.br)
+https://assembleia.api.pandora.com.br
 ```
 
 Gerar o Token
 
 ```sh
-(localhost:8180/api/gera-token-integracao)
+https://assembleia.api.pandora.com.br/api/gera-token-integracao
 ```
 
 Criar um Votante
 
 ```sh
-(localhost:8180/api-assembleia/tag/Organizador/paths/evento/post)
+https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/post
 ```
 
 Lista um Evento
 
 ```sh
-(localhost:8180/api-assembleia/tag/Organizador/paths/evento/7747/votante/get)
+https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/{codigo_evento}/votante/get
 ```
 
-Lista um Votante
+Lista um unico Votante 
 
 ```sh
-(localhost:8180/api-assembleia/tag/Organizador/paths/evento/7747/votante/5/get)
+https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/{codigo_evento}/votante/{id}/get
+```
+Lista de Documentos
+
+```sh
+https://assembleia.api.pandora.com.br/api-assembleia/tag/Organizador/paths/evento/assembleia/
 ```
 
 Rodando os Testes
